@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Raj | CSE Student & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .profile-blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: linear-gradient(45deg, #6366f1, #a855f7);
+        }
+        .ai-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .loading-pulse { animation: pulse-slow 1.5s infinite; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-700">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-200/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-bold tracking-tighter uppercase">RR<span class="text-indigo-600">.</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10 text-sm font-semibold uppercase tracking-widest">
+                    <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-indigo-600 transition-colors">Skills</a>
+                    <a href="#ai-playground" class="hover:text-indigo-600 transition-colors">AI Playground ✨</a>
+                    <a href="#work" class="hover:text-indigo-600 transition-colors">Work</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-indigo-600 transition-all">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 p-2">
+                    <i class="fas fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-200 p-6 space-y-4 shadow-xl">
+            <a href="#about" class="block text-lg font-medium">About Me</a>
+            <a href="#skills" class="block text-lg font-medium">My Skills</a>
+            <a href="#ai-playground" class="block text-lg font-medium">AI Playground ✨</a>
+            <a href="#work" class="block text-lg font-medium">Portfolio</a>
+            <a href="#contact" class="block text-lg font-bold text-indigo-600">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Intro -->
+    <section id="hero" class="pt-44 pb-32 px-6">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold mb-6">CSE Student @ SRM KTR</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-[1.1]">
+                    Hello, I'm <br><span class="gradient-text">Ritik Raj</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-10 leading-relaxed max-w-lg">
+                    An aspiring software engineer learning to build meaningful digital products. Currently exploring the world of full-stack development and competitive programming.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 hover:-translate-y-1 transition-all shadow-lg shadow-indigo-200">
+                        My Projects
+                    </a>
+                    <div class="flex items-center gap-6 ml-4">
+                        <a href="https://github.com/redx7988" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors text-xl" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ritik-raj-347546371" target="_blank" class="text-slate-400 hover:text-indigo-600 transition-colors text-xl" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/ritik_raj.03/" target="_blank" class="text-slate-400 hover:text-pink-600 transition-colors text-xl" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-4 profile-blob opacity-20 group-hover:opacity-30 transition-opacity blur-2xl"></div>
+                    <img src="WhatsApp Image 2026-02-15 at 3.11.41 PM.jpeg" 
+                         onerror="this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=500&q=80'"
+                         alt="Ritik Raj - Portrait" 
+                         class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-[3rem] shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Playground Section ✨ -->
+    <section id="ai-playground" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-indigo-500 blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-64 h-64 bg-pink-500 blur-[100px]"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">AI Playground ✨</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    Interact with these Gemini-powered features to see how I integrate LLMs into web applications.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Project Brainstormer -->
+                <div class="p-8 rounded-3xl ai-card bg-slate-800/50 border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-xl">🚀</div>
+                        <h3 class="text-2xl font-bold">Project Roadmap Generator ✨</h3>
+                    </div>
+                    <p class="text-slate-400 mb-6 text-sm">Have a project idea? Type it below and the AI will suggest a tech stack and a 3-step roadmap.</p>
+                    <div class="space-y-4">
+                        <input id="roadmap-input" type="text" placeholder="e.g. A decentralised voting app" 
+                               class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition-all">
+                        <button onclick="generateRoadmap()" id="roadmap-btn" 
+                                class="w-full py-3 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-900/20">
+                            Generate Roadmap ✨
+                        </button>
+                    </div>
+                    <div id="roadmap-output" class="mt-6 text-sm text-slate-300 leading-relaxed max-h-60 overflow-y-auto custom-scrollbar">
+                        <!-- AI Response goes here -->
+                    </div>
+                </div>
+
+                <!-- AI Chat Assistant -->
+                <div class="p-8 rounded-3xl ai-card bg-slate-800/50 border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-xl">🤖</div>
+                        <h3 class="text-2xl font-bold">Ask My Assistant ✨</h3>
+                    </div>
+                    <p class="text-slate-400 mb-6 text-sm">Ask anything about Ritik's skills, his time at SRM, or his programming interests.</p>
+                    <div id="chat-container" class="space-y-4 mb-4 h-48 overflow-y-auto p-4 bg-slate-900 rounded-xl border border-slate-700">
+                        <div class="text-slate-500 italic text-xs">AI Assistant: Hello! I know a lot about Ritik Raj. What would you like to know?</div>
+                    </div>
+                    <div class="flex gap-2">
+                        <input id="chat-input" type="text" placeholder="What tech stack does he use?" 
+                               class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-pink-500 outline-none text-sm transition-all">
+                        <button onclick="askAssistant()" id="chat-btn" 
+                                class="px-6 py-3 bg-pink-600 rounded-xl font-bold hover:bg-pink-500 transition-all shadow-lg shadow-pink-900/20">
+                            Ask ✨
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Skills -->
+    <section id="about" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl font-bold mb-6">Education & Goals</h2>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        I am a Computer Science Engineering student at <strong>SRM Institute of Science and Technology, Kattankulathur</strong>. 
+                    </p>
+                    <p class="text-slate-500 mb-8 leading-relaxed">
+                        My passion lies in solving complex problems through code. I am currently honing my skills in C++, Data Structures, and Modern Web Development.
+                    </p>
+                    <a href="https://www.linkedin.com/in/ritik-raj-347546371" target="_blank" class="text-indigo-600 font-bold flex items-center gap-2 group">
+                        Connect on LinkedIn <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div id="skills" class="lg:col-span-2 grid sm:grid-cols-2 gap-8">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fas fa-laptop-code text-indigo-600 text-2xl mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Web Development</h3>
+                        <p class="text-sm text-slate-500">Learning HTML5, CSS3, JavaScript, and modern frameworks like Tailwind CSS.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fas fa-brain text-purple-600 text-2xl mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Core Programming</h3>
+                        <p class="text-sm text-slate-500">Strong focus on C++ and Java for academic and competitive coding.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fas fa-server text-pink-600 text-2xl mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Problem Solving</h3>
+                        <p class="text-sm text-slate-500">Actively practicing Data Structures and Algorithms on platforms like LeetCode.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fas fa-graduation-cap text-emerald-600 text-2xl mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">CSE Academic</h3>
+                        <p class="text-sm text-slate-500">Gaining knowledge in Computer Networks, OS, and Database Management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="work" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">University Work</h2>
+                    <p class="text-slate-500">Academic and personal projects I've worked on during my time at SRM KTR.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-6 py-2 rounded-full bg-slate-900 text-white text-sm font-medium">All</button>
+                    <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Coursework</button>
+                    <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Personal</button>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-3xl mb-6 aspect-video bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0"
+                             alt="Coding project">
+                        <div class="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/redx7988" target="_blank" class="px-6 py-3 bg-white rounded-full font-bold text-indigo-900 hover:bg-indigo-50 transition-colors">View Details</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Algorithm Visualizer</h3>
+                    <p class="text-slate-500">A personal project to visualize sorting and searching algorithms.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-3xl mb-6 aspect-video bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0"
+                             alt="Dev project">
+                        <div class="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/redx7988" target="_blank" class="px-6 py-3 bg-white rounded-full font-bold text-indigo-900 hover:bg-indigo-50 transition-colors">View Details</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">University Management UI</h3>
+                    <p class="text-slate-500">A conceptual interface design for student management systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-[120px] -mr-48 -mt-48 rounded-full"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Want to collaborate? <br><span class="text-indigo-400">Reach out.</span></h2>
+                <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+                    Drop me an email at <a href="mailto:ritikra94@gmail.com" class="text-indigo-400 hover:text-indigo-300 transition-colors font-semibold">ritikra94@gmail.com</a> or find me on 
+                    <a href="https://www.linkedin.com/in/ritik-raj-347546371" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition-colors font-semibold underline decoration-2 underline-offset-4">LinkedIn</a> or 
+                    <a href="https://www.instagram.com/ritik_raj.03/" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition-colors font-semibold underline decoration-2 underline-offset-4">Instagram</a>.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Your Name" required class="w-full bg-slate-800 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <input type="email" placeholder="Email Address" required class="w-full bg-slate-800 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <textarea rows="4" placeholder="Your message..." required class="w-full bg-slate-800 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    <button type="submit" class="px-10 py-4 bg-indigo-600 rounded-2xl font-bold hover:bg-indigo-500 transition-all flex items-center gap-3">
+                        Connect with me <i class="fas fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+                <div id="form-success" class="hidden mt-6 p-4 bg-indigo-500/20 text-indigo-200 rounded-2xl border border-indigo-500/30">
+                    Thanks, I'll get back to you as soon as I can!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-slate-900 font-bold mb-1">Ritik Raj</p>
+                <p class="text-slate-400 text-sm">© 2026 SRM KTR CSE Student</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <a href="mailto:ritikra94@gmail.com" class="text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
+                    ritikra94@gmail.com
+                </a>
+                <div class="flex gap-8 text-slate-400">
+                    <a href="https://www.linkedin.com/in/ritik-raj-347546371" target="_blank" class="hover:text-indigo-600 transition-colors" title="LinkedIn"><i class="fab fa-linkedin text-lg"></i></a>
+                    <a href="https://github.com/redx7988" target="_blank" class="hover:text-indigo-600 transition-colors" title="GitHub"><i class="fab fa-github text-lg"></i></a>
+                    <a href="https://www.instagram.com/ritik_raj.03/" target="_blank" class="hover:text-pink-600 transition-colors" title="Instagram"><i class="fab fa-instagram text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Gemini API Configuration ---
+        const apiKey = "";
+        const GEMINI_MODEL = "gemini-2.5-flash-preview-09-2025";
+        
+        async function callGemini(prompt, systemInstruction = "") {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: systemInstruction ? { parts: [{ text: systemInstruction }] } : undefined
+            };
+
+            let delay = 1000;
+            for (let i = 0; i < 5; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('API Error');
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+                } catch (error) {
+                    if (i === 4) return "Error: Failed to connect to AI after multiple retries.";
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+        }
+
+        // --- Feature 1: Roadmap Generator ---
+        async function generateRoadmap() {
+            const input = document.getElementById('roadmap-input').value;
+            const output = document.getElementById('roadmap-output');
+            const btn = document.getElementById('roadmap-btn');
+
+            if (!input) return;
+
+            btn.disabled = true;
+            btn.innerHTML = 'Generating... ✨';
+            output.innerHTML = '<div class="loading-pulse italic">Thinking of the best path for you...</div>';
+
+            const systemPrompt = "You are an expert full-stack developer. When given a project idea, suggest a modern tech stack and a 3-step high-level roadmap. Keep the response concise and formatted with bullet points.";
+            const response = await callGemini(`Project Idea: ${input}`, systemPrompt);
+
+            output.innerText = response;
+            btn.disabled = false;
+            btn.innerHTML = 'Generate Roadmap ✨';
+        }
+
+        // --- Feature 2: AI Assistant ---
+        async function askAssistant() {
+            const input = document.getElementById('chat-input').value;
+            const container = document.getElementById('chat-container');
+            const btn = document.getElementById('chat-btn');
+
+            if (!input) return;
+
+            // Add User Message
+            container.innerHTML += `<div class="text-white text-xs text-right mb-2"><span class="bg-indigo-600/30 px-3 py-1.5 rounded-lg inline-block">You: ${input}</span></div>`;
+            document.getElementById('chat-input').value = '';
+            container.scrollTop = container.scrollHeight;
+
+            btn.disabled = true;
+            btn.innerHTML = '... ✨';
+
+            const systemPrompt = "You are the AI Assistant for Ritik Raj. Ritik is a CSE student at SRM KTR learning Web Dev, C++, and DSA. His email is ritikra94@gmail.com. His GitHub is redx7988. Answer questions as if you are his personal bot. Be polite, concise, and professional.";
+            const response = await callGemini(input, systemPrompt);
+
+            // Add AI Message
+            container.innerHTML += `<div class="text-slate-300 text-xs text-left mb-2"><span class="bg-slate-800 px-3 py-1.5 rounded-lg inline-block">Assistant: ${response}</span></div>`;
+            container.scrollTop = container.scrollHeight;
+            
+            btn.disabled = false;
+            btn.innerHTML = 'Ask ✨';
+        }
+
+        // --- UI Interactions ---
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        const form = document.getElementById('contact-form');
+        const success = document.getElementById('form-success');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.opacity = '0.5';
+            setTimeout(() => {
+                form.reset();
+                form.style.opacity = '1';
+                success.classList.remove('hidden');
+                setTimeout(() => success.classList.add('hidden'), 5000);
+            }, 1000);
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
